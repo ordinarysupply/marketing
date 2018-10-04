@@ -1,0 +1,30 @@
+title: Ordinary Supply
+email: info@ordinarysupply.com
+description: >-
+  Ordinary Supply provides the best promotional goods and custom branded merch for your team and fans. Ethically made from premium fabrics, customized for your brand.
+baseurl: ""
+url: ""
+twitter_username:   ordinarysupply
+github_username:    ordinarysupply
+instagram_username: ordinarysupply
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+collections:
+  products:
+    output: false
+    relative_directory: /products
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - config.codekit3
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#">
+  {% include global/head.html %}
+<body>
+  {% include global/navigation.html %}
+  {% assign sectionClasses = "relative overflow-auto w-100 pt3 pb4" %}
+  {% assign sectionLoopClasses = "loop overflow-x-scroll overflow-y-visible pl4 flex" %}
+  {% assign sectionTitleClasses = "w-100 f3 fw5 lh-title ph4 mb0 mt4" %}
+  <header class="masthead">
+    {{ content }}
+  </header>
+  <main id="main">
+
+    {% assign toolsWidth = site.tools.size | times: '288' %}
+    {% if site.podcasts.size > 0 %}
+      <h2 class="{{ sectionTitleClasses }}">Podcasts</h2>
+      <section id="podcasts" class="{{ sectionClasses }}">
+        {% for item in site.podcasts %}
+          {% include index/media.html %}
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {% assign toolsWidth = site.tools.size | times: '288' %}
+    {% if site.videos.size > 0 %}
+      <h2 class="{{ sectionTitleClasses }}">Videos</h2>
+      <section id="videos" class="{{ sectionClasses }}">
+        {% for item in site.videos %}
+          {% include index/media.html %}
+        {% endfor %}
+      </section>
+    {% endif %}
+
+    {% assign booksWidth = site.books.size | times: '288' %}
+    {% if site.books.size > 0 %}
+      <h2 class="{{ sectionTitleClasses }}">Books</h2>
+      <section id="books" class="{{ sectionClasses }}">
+        <div class="{{ sectionLoopClasses }}" style="min-width: {{ booksWidth }}px">
+          {% for item in site.books %}
+            {% include index/media.html %}
+          {% endfor %}
+        </div>
+        <span class="shelf" style="min-width: {{ booksWidth }}px"></span>
+      </section>
+    {% endif %}
+
+    {% assign podcastsWidth = site.tools.size | times: '288' %}
+    {% if site.tools.size > 0 %}
+      <h2 class="{{ sectionTitleClasses }}">Tools</h2>
+      <section id="tools" class="{{ sectionClasses }}">
+        <div class="{{ sectionLoopClasses }}" style="min-width: {{ booksWidth }}px">
+          {% for item in site.tools %}
+            {% include index/media.html %}
+          {% endfor %}
+        </div>
+        <span class="shelf" style="min-width: {{ booksWidth }}px"></span>
+      </section>
+    {% endif %}
+
+    {% assign linksWidth = site.links.size | times: '288' %}
+    {% if site.links.size > 0 %}
+      <h2 class="{{ sectionTitleClasses }}">Links</h2>
+      <section id="links" class="{{ sectionClasses | remove: 'pb4' | remove: 'pt3' }}">
+        <div class="{{ sectionLoopClasses | append: ' pt3 pb4' }}" style="min-width: {{ booksWidth }}px">
+          {% for item in site.links %}
+            {% include index/card.html %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+
+    {% assign postsWidth = site.posts.size | times: '288' %}
+    {% if site.posts.size > 0 %}
+      <h2 class="{{ sectionTitleClasses }}">Posts</h2>
+      <section id="posts" class="{{ sectionClasses | remove: 'pb4' | remove: 'pt3' }}">
+        <div class="{{ sectionLoopClasses | append: ' pt3 pb4' }}" style="min-width: {{ booksWidth }}px">
+          {% for item in site.posts %}
+            {% include index/card.html %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  </main>
+  {% include global/footer.html %}
+
+</body>
+</html>

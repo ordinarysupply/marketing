@@ -1,0 +1,31 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: "/admin/"
+webhook_url:
+sections:
+- type: heading
+  label: Pages
+- type: document
+  path: index.md
+  label: Homepage
+- type: document
+  path: products.md
+  label: Products
+- type: document
+  path: about.md
+  label: About
+- type: heading
+  label: Collections
+- type: directory
+  path: _products
+  label: Products
+  create: documents
+  match: "**/*"
+  templates:
+  - product
+upload_dir: uploads
+public_path: "/uploads"
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ":filename:"

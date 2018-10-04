@@ -1,0 +1,31 @@
+/*
+
+  STYLES
+
+  Add custom styles here.
+
+*/
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+p > a {
+  border-bottom: solid 1px $black;
+  &:visited {
+    color: $black;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+body {
+  font-family: $sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}

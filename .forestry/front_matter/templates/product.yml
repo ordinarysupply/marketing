@@ -1,0 +1,15 @@
+---
+label: Product
+hide_body: false
+is_partial: false
+fields:
+- type: text
+  name: title
+  label: Title
+- type: textarea
+  name: excerpt
+  label: Excerpt
+- type: text
+  name: link
+  label: Link
+pages:
